@@ -25,7 +25,9 @@ pipeline {
         //构建上传镜像
         stage('docker'){
             steps{
-                echo "success"
+                docker.withRegistry('https://ccr.ccs.tencentyun.com', 'DOCKER_REP_KEY'){
+                    
+                }
             }
         }
 
