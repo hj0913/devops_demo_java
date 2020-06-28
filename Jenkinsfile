@@ -6,7 +6,7 @@ pipeline {
         stage('scm') {
             steps {
                 script {
-                    git credentialsId: 'hj0913', url: 'git@github.com:hj0913/jenkinsdemo.git'
+                    git credentialsId: 'hj0913', url: 'git@github.com:hj0913/devops_demo_java.git'
                 }
             }
         }
