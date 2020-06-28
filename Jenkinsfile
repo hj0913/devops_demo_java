@@ -25,14 +25,14 @@ pipeline {
         //构建上传镜像
         stage('docker'){
             steps{
-
+                echo "success"
             }
         }
 
         //拉取镜像 拉起服务
         stage("deploy"){
             steps{
-
+                echo "success"
             }
         }
     }
