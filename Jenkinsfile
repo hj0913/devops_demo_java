@@ -1,5 +1,3 @@
-String branchName = "${env.branchName}"
-
 pipeline {
     agent any
 
@@ -8,7 +6,6 @@ pipeline {
         stage('scm') {
             steps {
                 script {
-                    println(branch)
                     git credentialsId: 'hj0913', url: 'git@github.com:hj0913/devops_demo_java.git'
                 }
             }
@@ -30,7 +27,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://ccr.ccs.tencentyun.com', 'TECENT_DOCKER_REGISTRY') {
-                        def devops = docker.build("ccr.ccs.tencentyun.com/docker_devops/devops-demo-java:1.0.0", "-f ./Dockerfile .")
+                        def devops = docker.build("ccr.ccs.tencentyun.com/docker_devops/devops-demo-java:2.0.0", "-f ./Dockerfile .")
                         devops.push()
                     }
                 }
