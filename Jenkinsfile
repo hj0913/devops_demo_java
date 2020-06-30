@@ -17,7 +17,7 @@ pipeline {
             }
         }
 
-        //构建打包
+        //构建打包 as
         stage('package') {
             steps {
                 script {
