@@ -6,7 +6,10 @@ pipeline {
         stage('scm') {
             steps {
                 script {
-                    echo ${branch}
+                    if("{runOpts}" == "GithubPush"){
+                        branchName = branch
+                    }
+                    println("${branchName}")
                     git credentialsId: 'hj0913', url: 'git@github.com:hj0913/devops_demo_java.git'
                 }
             }
