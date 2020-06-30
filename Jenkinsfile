@@ -1,3 +1,5 @@
+String branchName = "${env.branchName}"
+
 pipeline {
     agent any
 
