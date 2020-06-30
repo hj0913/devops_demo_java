@@ -14,7 +14,7 @@ pipeline {
             }
         }
 
-        //构建打包 as asa aa
+        //构建打包 as asa aa a
         stage('package') {
             steps {
                 script {
