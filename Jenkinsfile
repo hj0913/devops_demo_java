@@ -1,3 +1,5 @@
+String branchName = "${env.branchName}"
+
 pipeline {
     agent any
 
@@ -6,12 +8,13 @@ pipeline {
         stage('scm') {
             steps {
                 script {
+                    println(branch)
                     git credentialsId: 'hj0913', url: 'git@github.com:hj0913/devops_demo_java.git'
                 }
             }
         }
 
-        //构建打包
+        //构建打包 as
         stage('package') {
             steps {
                 script {
