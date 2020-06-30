@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                     withMaven(jdk: 'jdk8', maven: 'M3') {
-                        sh "mvn clean package -Dmaven.test.skip=true "
+                        sh "mvn clean package -Dmaven.test.skip=true"
                     }
                 }
             }
